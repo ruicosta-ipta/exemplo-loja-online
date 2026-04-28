@@ -1,0 +1,9 @@
+
+name: loja-online
+services:
+  app:
+    build: .
+    ports:
+      - 9000:8000
+    environment:
+      - DEBUG=True

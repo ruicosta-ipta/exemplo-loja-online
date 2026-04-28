@@ -34,7 +34,7 @@ DEBUG = env("DEBUG")
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = ['exemplo-loja-online.onrender.com', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['exemplo-loja-online.onrender.com', 'localhost', '0.0.0.0', '127.0.0.1']
 
 STATIC_ROOT = 'static'
 
