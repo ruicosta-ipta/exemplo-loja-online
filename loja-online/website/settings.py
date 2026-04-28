@@ -21,7 +21,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 env = environ.Env(
     DEBUG=(bool, False),
-    SECRET_KEY=(str, "django-insecure-6!no%s*25didp&+2)_dgc7g36g8tbx0s(1m93a%fm@y6*+wsj-"),
+    SECRET_KEY=(str, "django-insecure-default-key-do-not-use"),
 )
 
 # SECURITY WARNING: keep the secret key used in production secret!
