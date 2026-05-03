@@ -34,7 +34,7 @@ DEBUG = env("DEBUG")
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = ['exemplo-loja-online.onrender.com', 'localhost', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['exemplo-loja-online.onrender.com', 'django', 'localhost', '0.0.0.0', '127.0.0.1']
 
 STATIC_ROOT = 'static'
 
@@ -108,25 +108,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-LOGGING = {
-   'version': 1,
-   'disable_existing_loggers': False,
-   'handlers': {
-      'file': {
-         'level': 'DEBUG',
-         'class': 'logging.FileHandler',
-         'filename': '/tmp/debug.log',
-      },
-   },
-   'loggers': {
-      'django': {
-         'handlers': ['file'],
-         'level': 'DEBUG',
-         'propagate': True,
-      },
-   },
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/

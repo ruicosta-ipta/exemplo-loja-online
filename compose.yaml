@@ -1,14 +1,16 @@
+volumes:
+  static:
 
 name: loja-online
 services:
   app:
     build: .
-    ports:
-      - 9000:8000
     env_file: loja-online/.env
+    volumes:
+      - static:/usr/src/app/static
     develop:
       watch:
-        - action: sync
+        - action: sync+restart
           path: ./loja-online
           target: /usr/src/app
           initial_sync: true
@@ -17,3 +19,14 @@ services:
 
         - action: rebuild
           path: requirements.txt
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile.nginx
+    volumes:
+      - static:/static
+    ports:
+      - 9000:80
+    depends_on:
+      - app
