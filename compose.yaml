@@ -13,6 +13,7 @@ services:
       - 3036:3036
     volumes:
       - o_meu_volume:/var/lib/mysql
+
   app:
     build: .
     ports:

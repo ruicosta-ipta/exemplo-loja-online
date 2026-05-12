@@ -17,7 +17,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Expõem a porta 8000 de dentro do Container para fora
 EXPOSE 8000
 
+# Só é possível conectar à base de dados depois
+# do serviço da db estar inicializado, por isso
+# não podemos fazer este comando na fase de construção
+# da imagem. Temos de o executar mais tarde.
 # RUN python manage.py migrate
+
 RUN python manage.py collectstatic --noinput
 
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
