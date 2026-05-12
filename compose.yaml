@@ -1,11 +1,25 @@
-
 name: loja-online
+
+volumes:
+  o_meu_volume:
+
 services:
+  database:
+    image: mysql:latest
+    env_file: .env
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
+    ports:
+      - 3036:3036
+    volumes:
+      - o_meu_volume:/var/lib/mysql
   app:
     build: .
     ports:
       - 9000:8000
-    env_file: loja-online/.env
+    env_file: .env
+    depends_on:
+      - database
     develop:
       watch:
         - action: sync+restart
