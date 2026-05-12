@@ -10,7 +10,7 @@ services:
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD="yes"
     ports:
-      - 3036:3036
+      - 3306:3306
     volumes:
       - o_meu_volume:/var/lib/mysql
 
